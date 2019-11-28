@@ -1,0 +1,9 @@
+.App {
+  display: flex;
+  color: red;
+  align-items: center;
+}
+
+.App-logo {
+  width: 32px;
+}
