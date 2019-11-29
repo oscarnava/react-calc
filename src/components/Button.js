@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable class-methods-use-this */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class Button extends React.Component {
   handleClick = ({ target: { innerText } }) => {
@@ -17,3 +18,7 @@ export default class Button extends React.Component {
     );
   }
 }
+
+Button.propTypes = {
+  name: PropTypes.string.isRequired,
+};
