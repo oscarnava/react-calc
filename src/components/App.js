@@ -5,7 +5,6 @@ import ButtonPanel from './ButtonPanel';
 import calculate from '../logic/calculate';
 import '../styles/styles.css';
 
-
 export default class App extends React.Component {
   constructor(props) {
     super(props);
