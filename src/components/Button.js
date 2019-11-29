@@ -4,7 +4,7 @@ import React from 'react';
 export default class Button extends React.Component {
   render() {
     return (
-      <div style={{ border: 'dotted thin red', display: 'inline-block' }}>
+      <div className='button'>
         {this.props.name}
       </div>
     );

@@ -4,7 +4,7 @@ import React from 'react';
 export default class Display extends React.Component {
   render() {
     return (
-      <div style={{ border: 'dotted thick blue' }}>
+      <div className='display'>
         {this.props.value}
       </div>
     );
