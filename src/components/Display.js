@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 export default class Display extends React.Component {
   render() {
     return (
-      <div style={{ border: 'dotted thick blue' }}>
+      <div className='display'>
         {this.props.value}
       </div>
     );
