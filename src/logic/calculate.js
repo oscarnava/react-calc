@@ -5,7 +5,7 @@ const MAX_DISP = new Big('10000000000000000');
 
 const formatNumber = (n) => {
   if (isNaN(n)) return n;
-  return n.gt(MAX_DISP) ? n.toExponential() : n.toFixed();
+  return (n.gt(MAX_DISP) ? n.toExponential(15) : n.toFixed()).slice(0, 20);
 };
 
 const functions = {
@@ -39,13 +39,18 @@ const addDigit = (next, digit) => {
   return null;
 };
 
-const setOperation = (next, buttonName) => {
-  if (operate.isValid(buttonName)) return { total: next, next: null, operation: buttonName };
+const setOperation = (total, next, operation, buttonName) => {
+  if (operate.isValid(buttonName)) {
+    if (operation) {
+      next = functions['='](total, next, operation).total;
+    }
+    return { total: next, next: null, operation: buttonName };
+  }
   return null;
 };
 
 const calculate = ({ total, next, operation }, buttonName) => addDigit(next || '', buttonName)
-  || setOperation(next || total, buttonName)
+  || setOperation(total, next || total, operation, buttonName)
   || functions[buttonName](total, next, operation);
 
 export default calculate;
