@@ -2,7 +2,8 @@
 import React from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
-import styles from '../styles/styles.css';
+import '../styles/styles.css';
+
 
 export default class App extends React.Component {
   render() {
@@ -14,3 +15,10 @@ export default class App extends React.Component {
     );
   }
 }
+
+// import operate from '../logic/operate';
+
+// console.log(operate(100, 5, '×').toFixed());
+// console.log(operate(100, 5, '÷').toFixed());
+// console.log(operate(100, 5, '+').toFixed());
+// console.log(operate(100, 5, '-').toFixed());
