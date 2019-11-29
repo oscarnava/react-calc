@@ -16,7 +16,7 @@ export default class ButtonPanel extends React.Component {
           <Button name='7' />
           <Button name='8' />
           <Button name='9' />
-          <Button name='x' color='orange' />
+          <Button name='×' color='orange' />
         </div>
         <div className='row'>
           <Button name='4' />
