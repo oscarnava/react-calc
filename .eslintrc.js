@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es6: true,
     jest: true,
-    react: true,
+    // react: true,
   },
   plugins: [
     "react"
@@ -29,6 +29,9 @@ module.exports = {
     "object-curly-newline": 0,
     "no-underscore-dangle": 0,
     "no-restricted-globals": 0,
+    "import/no-unresolved": [
+      2, { "ignore": ["react", "react-dom"] }
+    ]
   },
   settings: {
     react: {
