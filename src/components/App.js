@@ -19,6 +19,8 @@ export default class App extends React.Component {
 
   handleClick = (buttonName) => {
     const newState = calculate(this.state, buttonName);
+    // const stt = this.state
+    // console.log('Current state:', Object.assign(stt, newState));
     this.setState(newState);
   }
 
@@ -26,7 +28,7 @@ export default class App extends React.Component {
     const { state: { total, next } } = this;
     return (
       <div id="app" className="app">
-        <Display value={next || total} />
+        <Display value={next || (isNaN(total) ? 'Error' : total)} />
         <ButtonPanel onClick={this.handleClick} />
       </div>
     );

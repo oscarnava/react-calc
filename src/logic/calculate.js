@@ -1,9 +1,36 @@
+import Big from 'big.js';
 import operate from './operate';
 
-const operations = {
-  '+/-': (total, next) => ({ total: -total, next: -next }),
-  '%': (total, next) => ({ total: total / 100, next: next / 100 }),
-  AC: () => 0,
+const MAX_DISP = new Big('10000000000000000');
+
+const formatNumber = (n) => {
+  if (isNaN(n)) return n;
+  return n.gt(MAX_DISP) ? n.toExponential() : n.toFixed();
+};
+
+const functions = {
+  AC: () => ({ total: null, next: null, operation: null }),
+
+  '±': (total, next) => (next ? ({ next: -next }) : ({ total: -total })),
+
+  '=': (total, next, operation) => {
+    if (operation) {
+      const result = formatNumber(operate(total, next || total, operation));
+      return ({ total: result, next: null, operation: null });
+    }
+    return ({});
+  },
+
+  '%': (total, next, operation) => {
+    if (operation) {
+      let result = operate(total, next || total, operation);
+      if (result) {
+        result = formatNumber(operate(result, '100', '÷'));
+        return ({ total: result, next: null, operation: null });
+      }
+    }
+    return ({});
+  },
 };
 
 const addDigit = (next, digit) => {
@@ -12,14 +39,13 @@ const addDigit = (next, digit) => {
   return null;
 };
 
-const execOperation = (total, next, buttonName) => {
-  const result = operate(total, next, buttonName);
-  if (result) return { total: result, next };
+const setOperation = (next, buttonName) => {
+  if (operate.isValid(buttonName)) return { total: next, next: null, operation: buttonName };
   return null;
 };
 
 const calculate = ({ total, next, operation }, buttonName) => addDigit(next || '', buttonName)
-  || execOperation(total, next, buttonName)
-  || Object.assign(operations[buttonName](total, next, buttonName), { operation });
+  || setOperation(next || total, buttonName)
+  || functions[buttonName](total, next, operation);
 
 export default calculate;

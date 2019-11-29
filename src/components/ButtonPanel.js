@@ -10,7 +10,7 @@ export default class ButtonPanel extends React.Component {
       <div className='button-panel'>
         <div className='row'>
           <Button name='AC'  onClick={this.handleClick} />
-          <Button name='+/-' onClick={this.handleClick} />
+          <Button name='±' onClick={this.handleClick} />
           <Button name='%'   onClick={this.handleClick} />
           <Button name='÷'   onClick={this.handleClick} color='orange' />
         </div>
