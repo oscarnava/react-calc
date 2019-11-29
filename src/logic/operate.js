@@ -7,10 +7,14 @@ const operations = {
   '÷': 'div',
 };
 
-const operate = (num1, num2, operation) => (
-  operations[operation]
-    ? (new Big(num1))[operations[operation]](new Big(num2))
-    : null
-);
+const operate = (num1, num2, operation) => {
+  try {
+    return operations[operation]
+      ? (new Big(num1))[operations[operation]](new Big(num2))
+      : null;
+  } catch (err) {
+    return NaN;
+  }
+};
 
 export default operate;
