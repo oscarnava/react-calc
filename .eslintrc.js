@@ -5,6 +5,9 @@ module.exports = {
     jest: true,
     react: true,
   },
+  plugins: [
+    "react"
+  ],
   extends: [
     'airbnb-base',
     "eslint:recommended",
