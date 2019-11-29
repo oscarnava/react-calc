@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es6: true,
     jest: true,
-    react: true,
+    // react: true,
   },
   plugins: [
     "react"
@@ -17,6 +17,7 @@ module.exports = {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
+  parser: "babel-eslint",
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
@@ -27,6 +28,7 @@ module.exports = {
     "eol-last": 0,
     "object-curly-newline": 0,
     "no-underscore-dangle": 0,
+    "no-restricted-globals": 0,
   },
   settings: {
     react: {
