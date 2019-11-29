@@ -34,3 +34,10 @@ export default class App extends React.Component {
     );
   }
 }
+
+// import operate from '../logic/operate';
+
+// console.log(operate(100, 5, '×').toFixed());
+// console.log(operate(100, 5, '÷').toFixed());
+// console.log(operate(100, 5, '+').toFixed());
+// console.log(operate(100, 5, '-').toFixed());
