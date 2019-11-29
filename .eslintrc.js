@@ -32,7 +32,6 @@ module.exports = {
     "import/no-unresolved": [
       2, { "ignore": ["react", "react-dom", "prop-types", "big.js"] }
     ],
-    "import/extensions": 0,
   },
   settings: {
     react: {
