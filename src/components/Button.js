@@ -3,8 +3,8 @@
 import React from 'react';
 
 export default class Button extends React.Component {
-  handleClick = ({ target: { innerText }}) => {
-    this.props.onClick(innerText)
+  handleClick = ({ target: { innerText } }) => {
+    this.props.onClick(innerText);
   }
 
   render() {
