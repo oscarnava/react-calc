@@ -30,7 +30,7 @@ module.exports = {
     "no-underscore-dangle": 0,
     "no-restricted-globals": 0,
     "import/no-unresolved": [
-      2, { "ignore": ["react", "react-dom"] }
+      2, { "ignore": ["react", "react-dom", "prop-types", "big.js"] }
     ]
   },
   settings: {
