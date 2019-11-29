@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es6: true,
     jest: true,
-    // react: true,
+    react: true,
   },
   plugins: [
     "react"
