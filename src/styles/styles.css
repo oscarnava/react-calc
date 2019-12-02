@@ -53,4 +53,6 @@
   border-left: solid thin white;
   border-right: solid thin black;
   border-bottom: solid thin black;
+  cursor: pointer;
+  user-select: none;
 }
